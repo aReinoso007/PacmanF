@@ -17,7 +17,7 @@ import javax.swing.JPanel;
  *
  * @author Alex Reinoso
  */
-public class VentanaJuego extends JFrame{
+public class VentanaJuego{
 
     JFrame ventana;
     //Presentacion
@@ -44,7 +44,7 @@ public class VentanaJuego extends JFrame{
     String jugador;
     String puntos;
 
-    public VentanaJuego() 
+    /*public VentanaJuego() 
     {
         ventana = new JFrame("PACMAN");
         ventana.setSize(700, 700);
@@ -101,10 +101,10 @@ public class VentanaJuego extends JFrame{
         ventana.add(panelPresentacion, -1);//montar en la ventana, como capa externa
 
         ventana.setVisible(true);
-    }
+    }*/
 
     public void menu() {
-
+        
         panelPresentacion.setVisible(false);
         panelMenu = new JPanel();
         panelMenu.setLayout(null);

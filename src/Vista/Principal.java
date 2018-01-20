@@ -16,9 +16,11 @@ public class Principal {
      */
     public static void main(String[] args) {
         
-        VentanaJuego obj = new VentanaJuego();
-        
-
+        VentanaPrincipal vPrin = new VentanaPrincipal();
+        vPrin.IniciaComponente();
+        VentanaJuego vJuego = new VentanaJuego();
+        vJuego.menu();
+        vJuego.jugar();
     }
     
 }
