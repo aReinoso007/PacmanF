@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,14 +17,15 @@ import javax.swing.JPanel;
  *
  * @author Alex Reinoso
  */
-public class VentanaJuego {
+public class VentanaJuego extends JFrame{
 
     JFrame ventana;
     //Presentacion
     JPanel panelPresentacion;
     JButton botonIniciar;
     JLabel fondoPresentacion;
-    JLabel PacmanGif;
+    JLabel fondoPresentacion2;
+    ImageIcon PacmanGif;
     ImageIcon imagenFondoPres;
 
     //menu del juego
@@ -42,7 +44,8 @@ public class VentanaJuego {
     String jugador;
     String puntos;
 
-    public VentanaJuego() {
+    public VentanaJuego() 
+    {
         ventana = new JFrame("PACMAN");
         ventana.setSize(700, 700);
         ventana.setLayout(null);
@@ -72,14 +75,16 @@ public class VentanaJuego {
         fondoPresentacion.setVisible(true);
         panelPresentacion.add(fondoPresentacion, 0);
 
-        PacmanGif = new JLabel();
-        PacmanGif.setBounds(350, 320, ventana.getWidth(), ventana.getHeight());
-
-        PacmanGif.setIcon(new ImageIcon("Imagenes/pacman.gif"));
-        PacmanGif.getBackground();
-        PacmanGif.setVisible(true);
-
-        panelPresentacion.add(PacmanGif);
+        
+        fondoPresentacion2 = new JLabel();
+        fondoPresentacion2.setBounds(0,120,635,800);
+        Image retValue2 = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Imagenes/pacman.gif"));
+        PacmanGif = new ImageIcon(retValue2);
+        PacmanGif = new ImageIcon(PacmanGif.getImage().getScaledInstance(900, 150, 0));
+        fondoPresentacion2.setIcon(PacmanGif);
+        fondoPresentacion2.setVisible(true);
+        panelPresentacion.add(fondoPresentacion2, 0);
+        
         //menu.. para dar memoria a los botones
         botones = new JButton[3];//vector de 5 botones
         for (int i = 0; i < botones.length; i++) {
