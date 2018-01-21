@@ -96,9 +96,9 @@ public class VentanaMenu extends JFrame
         this.botonList.get(2).setBackground(Color.blue);
         this.botonList.get(2).setVisible(true);
         
-        this.botonList.get(0).addMouseListener(new EventoMenu(this));
-        //this.botonList.get(1).addMouseListener(new EventoMenu(this));
-        //this.botonList.get(2).addMouseListener(new EventoMenu(this));
+        this.botonList.get(0).addActionListener(new EventoMenu(this));
+        //this.botonList.get(1).addActionListener(new EventoMenu(this));
+        this.botonList.get(2).addActionListener(new EventoMenu(this));
         
         fondoMenu.add(this.botonList.get(0));
         fondoMenu.add(this.botonList.get(1));

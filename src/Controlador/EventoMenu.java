@@ -16,7 +16,7 @@ import java.awt.event.MouseListener;
  *
  * @author Daniel
  */
-public class EventoMenu implements MouseListener
+public class EventoMenu implements ActionListener
 {
     private VentanaMenu ventanaMenu;
 
@@ -31,46 +31,13 @@ public class EventoMenu implements MouseListener
     public void setVentanaMenu(VentanaMenu ventanaMenu) {
         this.ventanaMenu = ventanaMenu;
     }
-    
 
     @Override
-    public void mouseClicked(MouseEvent e) 
+    public void actionPerformed(ActionEvent e) 
     {
-        if(e.getSource().equals(this.ventanaMenu.getBotonList().get(0)))
-        {
-            this.ventanaMenu.setVisible(true);
-        }
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-        if(e.getSource().equals(this.ventanaMenu.getBotonList().get(0)))
-        {
-            this.ventanaMenu.setVisible(true);
-        }
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-        if(e.getSource().equals(this.ventanaMenu.getBotonList().get(1)))
-        {
-            this.ventanaMenu.setVisible(true);
-        }
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
         if(e.getSource().equals(this.ventanaMenu.getBotonList().get(2)))
         {
-            //this.ventanaMenu
-        }
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-        if(e.getSource().equals(this.ventanaMenu.getBotonList().get(1)))
-        {
-            this.ventanaMenu.setVisible(true);
+            System.exit(0);
         }
     }
 
