@@ -15,12 +15,9 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        VentanaPrincipal vPrin = new VentanaPrincipal();
-        vPrin.IniciaComponente();
-        VentanaJuego vJuego = new VentanaJuego();
-        vJuego.menu();
-        vJuego.jugar();
+
+        VentanaIntro VIntro = new VentanaIntro();
+        VIntro.IniciaComponente();
     }
     
 }
