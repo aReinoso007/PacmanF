@@ -43,9 +43,6 @@ public class EventoIntro implements ActionListener
         {
             this.ventanaIntro.setVisible(false);
             VentanaMenu vm = new VentanaMenu();
-            vm.getFondoMenu();
-            vm.getBounds();
-            vm.getClass();
             vm.menu();
         }
     }

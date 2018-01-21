@@ -52,7 +52,7 @@ public class VentanaMenu extends JFrame
     
     public VentanaMenu()
     {
-        super();
+        super("PACMAN-Menu");
         this.menu();
         this.setVisible(true);
         this.setSize(700, 700);
@@ -80,19 +80,19 @@ public class VentanaMenu extends JFrame
         
         this.botonList.add(new JButton("JUGAR"));
         this.botonList.get(0).setForeground(Color.white);
-        this.botonList.get(0).setBounds(240, 200, 200, 40);
+        this.botonList.get(0).setBounds(240, 230, 200, 40);
         this.botonList.get(0).setBackground(Color.blue);
         this.botonList.get(0).setVisible(true);
 
         this.botonList.add(new JButton("RECORDS"));
         this.botonList.get(1).setForeground(Color.white);
-        this.botonList.get(1).setBounds(240, 250, 200, 40);
+        this.botonList.get(1).setBounds(240, 280, 200, 40);
         this.botonList.get(1).setBackground(Color.blue);
         this.botonList.get(1).setVisible(true);
         
         this.botonList.add(new JButton("SALIR"));
         this.botonList.get(2).setForeground(Color.white);
-        this.botonList.get(2).setBounds(240, 300, 200, 40);
+        this.botonList.get(2).setBounds(240, 330, 200, 40);
         this.botonList.get(2).setBackground(Color.blue);
         this.botonList.get(2).setVisible(true);
         
