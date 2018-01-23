@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Vista;
 
 import Controlador.EventoMenu;
@@ -14,44 +9,37 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Alex Reinoso
- */
-public class VentanaMenu extends JFrame
-{
-    
+public class VentanaMenu extends JFrame {
+
     private List<JButton> botonList;
     private JPanel panel;
-    private JPanel panelMenu;   
+    private JPanel panelMenu;
     private JPanel panelPresentacion;
     private JPanel panelJuego;
-    
+
     JButton botonIniciar;
-    
+
     ImageIcon PacmanGif;
     ImageIcon imagenFondoPres;
     ImageIcon imagenFondoMenu;
     ImageIcon imagenFondoJuego;
-    
+
     JLabel fondoPresentacion;
     JLabel fondoPresentacion2;
-    JLabel fondoMenu;  
+    JLabel fondoMenu;
     JLabel fondoJuego;
-    
+
     int matris[][];//es una matriz logica para realizar cambios, y otra de imagen en donde se muestran esos cambios
     JLabel matrizl[][];
     JLabel nombre;
     JLabel records;//para mostrar la puntuacion con cada pedazo de comida que come Pac-Man
     String jugador;
     String puntos;
-    
-    public VentanaMenu()
-    {
+
+    public VentanaMenu() {
         super("PACMAN-Menu");
         this.menu();
         this.setVisible(true);
@@ -59,9 +47,8 @@ public class VentanaMenu extends JFrame
         this.setLocation(650, 210);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-    
-    public void menu() 
-    {      
+
+    public void menu() {
         panelMenu = new JPanel();
         panelMenu.setLayout(null);
         panelMenu.setBounds(0, 0, this.getWidth(), this.getHeight());
@@ -71,13 +58,13 @@ public class VentanaMenu extends JFrame
         fondoMenu.setBounds(0, 0, this.getWidth(), this.getHeight());
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Imagenes/PACMAN_Menu.png"));
         imagenFondoMenu = new ImageIcon(retValue);
-        imagenFondoPres = new ImageIcon(imagenFondoMenu.getImage().getScaledInstance(700,700, Image.SCALE_DEFAULT));
+        imagenFondoPres = new ImageIcon(imagenFondoMenu.getImage().getScaledInstance(700, 700, Image.SCALE_DEFAULT));
         fondoMenu.setIcon(imagenFondoMenu);
         fondoMenu.setVisible(true);
         panelMenu.add(fondoMenu);
 
-        this.botonList= new ArrayList<JButton>();
-        
+        this.botonList = new ArrayList<JButton>();
+
         this.botonList.add(new JButton("JUGAR"));
         this.botonList.get(0).setForeground(Color.white);
         this.botonList.get(0).setBounds(240, 230, 200, 40);
@@ -89,24 +76,24 @@ public class VentanaMenu extends JFrame
         this.botonList.get(1).setBounds(240, 280, 200, 40);
         this.botonList.get(1).setBackground(Color.blue);
         this.botonList.get(1).setVisible(true);
-        
+
         this.botonList.add(new JButton("SALIR"));
         this.botonList.get(2).setForeground(Color.white);
         this.botonList.get(2).setBounds(240, 330, 200, 40);
         this.botonList.get(2).setBackground(Color.blue);
         this.botonList.get(2).setVisible(true);
-        
+
         this.botonList.get(0).addActionListener(new EventoMenu(this));
         //this.botonList.get(1).addActionListener(new EventoMenu(this));
         this.botonList.get(2).addActionListener(new EventoMenu(this));
-        
+
         fondoMenu.add(this.botonList.get(0));
         fondoMenu.add(this.botonList.get(1));
         fondoMenu.add(this.botonList.get(2));
-        
+
         this.add(panelMenu);
 
-                /*jugador = JOptionPane.showInputDialog(ventana, "NOmbre del jugador", "Escribe aqui");
+        /*jugador = JOptionPane.showInputDialog(ventana, "NOmbre del jugador", "Escribe aqui");
                 while (jugador == null || jugador.compareTo("Escribe aqui") == 0 || jugador.compareTo("") == 0) {
                     jugador = JOptionPane.showInputDialog(ventana, "Ingrese un usuario", "Escribe aqui");
                 }
@@ -168,7 +155,7 @@ public class VentanaMenu extends JFrame
     public void setRecords(JLabel records) {
         this.records = records;
     }
-    
+
     public String getPuntos() {
         return puntos;
     }
@@ -256,7 +243,5 @@ public class VentanaMenu extends JFrame
     public void setImagenFondoMenu(ImageIcon imagenFondoMenu) {
         this.imagenFondoMenu = imagenFondoMenu;
     }
-    
-    
-    
+
 }

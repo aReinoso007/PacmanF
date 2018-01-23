@@ -1,56 +1,45 @@
 package Vista;
 
 import Controlador.EventoIntro;
-import Controlador.EventoMenu;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 import java.util.List;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Alex Reinoso
- */
-public class VentanaIntro extends JFrame
-{
-    
+public class VentanaIntro extends JFrame {
+
     //Presentacion
     private List<JButton> botonList;
     private JPanel panel;
-    private JPanel panelMenu;   
+    private JPanel panelMenu;
     private JPanel panelPresentacion;
     private JPanel panelJuego;
-    
+
     JButton botonIniciar;
-    
+
     ImageIcon PacmanGif;
     ImageIcon imagenFondoPres;
     ImageIcon imagenFondoMenu;
     ImageIcon imagenFondoJuego;
-    
+
     JLabel fondoPresentacion;
     JLabel fondoPresentacion2;
-    JLabel fondoMenu;  
+    JLabel fondoMenu;
     JLabel fondoJuego;
-    
+
     int matris[][];//es una matriz logica para realizar cambios, y otra de imagen en donde se muestran esos cambios
     JLabel matrizl[][];
     JLabel nombre;
     JLabel records;//para mostrar la puntuacion con cada pedazo de comida que come Pac-Man
     String jugador;
     String puntos;
-    
-    public VentanaIntro()
-    {
+
+    public VentanaIntro() {
         super("PACMAN");
         this.IniciaComponente();
         this.setVisible(true);
@@ -58,9 +47,8 @@ public class VentanaIntro extends JFrame
         this.setLocation(650, 210);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-    
-    public void IniciaComponente()
-    {
+
+    public void IniciaComponente() {
         /*ventana = new JFrame("PACMAN");
         ventana.setSize(700, 700);
         ventana.setLayout(null);
@@ -72,7 +60,7 @@ public class VentanaIntro extends JFrame
         this.botonIniciar.setBounds(this.getWidth() - 120, 20, 100, 30);
         this.botonIniciar.setVisible(true);
         this.botonIniciar.addActionListener(new EventoIntro(this));
-        
+
         panelPresentacion = new JPanel();
         panelPresentacion.setLayout(null);
         panelPresentacion.setBounds(0, 0, this.getWidth(), this.getHeight());
@@ -80,17 +68,16 @@ public class VentanaIntro extends JFrame
         panelPresentacion.setBackground(Color.red);
 
         fondoPresentacion = new JLabel();
-        fondoPresentacion.setBounds(0, 0,700,700);
+        fondoPresentacion.setBounds(0, 0, 700, 700);
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Imagenes/PACMAN_Inicio.png"));
         imagenFondoPres = new ImageIcon(retValue);
-        imagenFondoPres = new ImageIcon(imagenFondoPres.getImage().getScaledInstance(700,700,0));
+        imagenFondoPres = new ImageIcon(imagenFondoPres.getImage().getScaledInstance(700, 700, 0));
         fondoPresentacion.setIcon(imagenFondoPres);
         fondoPresentacion.setVisible(true);
         panelPresentacion.add(fondoPresentacion);
 
-        
         fondoPresentacion2 = new JLabel();
-        fondoPresentacion2.setBounds(0,120,635,800);
+        fondoPresentacion2.setBounds(0, 120, 635, 800);
         Image retValue2 = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Imagenes/pacman.gif"));
         PacmanGif = new ImageIcon(retValue2);
         PacmanGif = new ImageIcon(PacmanGif.getImage().getScaledInstance(900, 150, 0));
@@ -98,11 +85,10 @@ public class VentanaIntro extends JFrame
         fondoPresentacion2.setVisible(true);
         fondoPresentacion.add(fondoPresentacion2);
         panelPresentacion.add(fondoPresentacion);
-        
-        this.add(botonIniciar);   
+
+        this.add(botonIniciar);
         this.add(panelPresentacion);//montar en la ventana, como capa externa
     }
-
 
     public JPanel getPanelPresentacion() {
         return panelPresentacion;
@@ -255,5 +241,5 @@ public class VentanaIntro extends JFrame
     public void setPuntos(String puntos) {
         this.puntos = puntos;
     }
-    
+
 }

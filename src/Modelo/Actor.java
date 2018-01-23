@@ -1,4 +1,3 @@
-
 package Modelo;
 
 import java.awt.Color;
@@ -10,32 +9,30 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
-public class Actor<T extends Jugar> 
-{
-    
+public class Actor<T extends Jugar> {
+
     public static final boolean DRAW_COLLIDER = false;
-    
+
     public T game;
     public double x, y;
     public boolean visible;
     public BufferedImage frame;
     public BufferedImage[] frames;
-    public Rectangle collider; 
-    
+    public Rectangle collider;
+
     protected int instructionPointer;
     protected long waitTime;
-    
-    
+
     public Actor(T game) {
         this.game = game;
     }
-    
+
     public void init() {
     }
-    
+
     public void update() {
     }
-    
+
     public void draw(Graphics2D g) {
         if (!visible) {
             return;
@@ -49,8 +46,8 @@ public class Actor<T extends Jugar>
             g.draw(collider);
         }
     }
-    
-    protected void loadFrames(String ... framesRes) {
+
+    protected void loadFrames(String... framesRes) {
         try {
             frames = new BufferedImage[framesRes.length];
             for (int i = 0; i < framesRes.length; i++) {
@@ -62,13 +59,12 @@ public class Actor<T extends Jugar>
             Logger.getLogger(Actor.class.getName()).log(Level.SEVERE, null, ex);
             System.exit(-1);
         }
-    } 
+    }
 
     public void updateCollider() {
         if (collider != null) {
             collider.setLocation((int) x, (int) y);
         }
     }
-    
-}
 
+}

@@ -1,4 +1,3 @@
-
 package Vista;
 
 import java.awt.Color;
@@ -11,61 +10,58 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+public class VentanaJuego extends JFrame {
 
-public class VentanaJuego extends JFrame
-{
     private List<JButton> botonList;
     private JPanel panel;
-    private JPanel panelMenu;   
+    private JPanel panelMenu;
     private JPanel panelPresentacion;
     private JPanel panelJuego;
-    
+
     JButton botonIniciar;
-    
+
     ImageIcon PacmanGif;
     ImageIcon imagenFondoPres;
     ImageIcon imagenFondoMenu;
     ImageIcon imagenFondoJuego;
-    
+
     JLabel fondoPresentacion;
     JLabel fondoPresentacion2;
-    JLabel fondoMenu;  
+    JLabel fondoMenu;
     JLabel fondoJuego;
-    
+
     int matris[][];//es una matriz logica para realizar cambios, y otra de imagen en donde se muestran esos cambios
     JLabel matrizl[][];
     JLabel nombre;
     JLabel records;//para mostrar la puntuacion con cada pedazo de comida que come Pac-Man
     String jugador;
     String puntos;
-    
-    public VentanaJuego()
-    {
+
+    public VentanaJuego() {
         super("PACMAN-Juego");
         this.juego();
         this.setVisible(true);
         this.setSize(700, 700);
         this.setLocation(650, 210);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }   
-    
-    public void juego()
-    {
+    }
+
+    public void juego() {
         panelPresentacion = new JPanel();
         panelPresentacion.setLayout(null);
         panelPresentacion.setBounds(0, 0, this.getWidth(), this.getHeight());
         panelPresentacion.setVisible(true);
         panelPresentacion.setBackground(Color.red);
-        
+
         fondoPresentacion = new JLabel();
-        fondoPresentacion.setBounds(0, 0,683,660);
+        fondoPresentacion.setBounds(0, 0, 683, 660);
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Imagenes/mapa.png"));
         imagenFondoPres = new ImageIcon(retValue);
-        imagenFondoPres = new ImageIcon(imagenFondoPres.getImage().getScaledInstance(700,700,0));
+        imagenFondoPres = new ImageIcon(imagenFondoPres.getImage().getScaledInstance(700, 700, 0));
         fondoPresentacion.setIcon(imagenFondoPres);
         fondoPresentacion.setVisible(true);
         panelPresentacion.add(fondoPresentacion);
-        
+
         this.add(panelPresentacion);
     }
 
@@ -228,5 +224,5 @@ public class VentanaJuego extends JFrame
     public void setPuntos(String puntos) {
         this.puntos = puntos;
     }
-    
+
 }
